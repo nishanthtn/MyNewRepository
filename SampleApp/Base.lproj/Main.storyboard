@@ -167,6 +167,8 @@
                         <outlet property="viewBannerHeight" destination="p0o-9f-FQn" id="7z3-cQ-xsM"/>
                         <outlet property="viewBanners" destination="89t-AH-cKv" id="Qvd-bD-KRj"/>
                         <outlet property="viewCategory" destination="0yy-3f-fi4" id="vNh-6n-aFT"/>
+                        <outlet property="viewCategoryHeight" destination="JVn-ru-guN" id="uic-Og-vpn"/>
+                        <outlet property="viewProductHeight" destination="nDx-FI-FcK" id="wzl-ZJ-hp8"/>
                         <outlet property="viewProducts" destination="tjg-A8-oTD" id="i94-K7-Ama"/>
                         <outlet property="viewSearch" destination="QML-nd-ufz" id="G09-6E-bbs"/>
                     </connections>

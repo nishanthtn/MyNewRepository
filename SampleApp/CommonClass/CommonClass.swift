@@ -8,6 +8,39 @@
 import UIKit
 
 class CommonClass: NSObject {
+    class func initialiseCollectionView(collectionViewCateogory: UICollectionView, collectionViewBanner: UICollectionView, collectionViewProduct: UICollectionView, type: [String]){
+        for i in 0..<(type.count){
+        if type[i] == "category"{
+            if i == 0 {
+                self.initialiseCategoryCollectionView(collectionView: collectionViewCateogory)
+            }else if i == 1{
+                self.initialiseCategoryCollectionView(collectionView: collectionViewBanner)
+            }else if i == 2{
+                self.initialiseCategoryCollectionView(collectionView: collectionViewProduct)
+            }
+            
+        }
+        else if type[i] == "banners"{
+            if i == 0 {
+                self.initialiseBannerCollectionView(collectionView: collectionViewCateogory)
+            }else if i == 1{
+                self.initialiseBannerCollectionView(collectionView: collectionViewBanner)
+            }else if i == 2{
+                self.initialiseBannerCollectionView(collectionView: collectionViewProduct)
+            }
+        }
+        else if type[i] == "products"{
+            if i == 0 {
+                self.initialiseProductCollectionView(collectionView: collectionViewCateogory)
+            }else if i == 1{
+                self.initialiseProductCollectionView(collectionView: collectionViewBanner)
+            }else if i == 2{
+                self.initialiseProductCollectionView(collectionView: collectionViewProduct)
+            }
+        }
+        
+        }
+    }
 
     class func initialiseCategoryCollectionView(collectionView: UICollectionView){
         let cellNib = UINib(nibName: "CategoryCell", bundle: nil)
@@ -52,5 +85,10 @@ class CommonClass: NSObject {
         flowLayout2.minimumInteritemSpacing = 10.0
         collectionView.collectionViewLayout = flowLayout2
         collectionView.showsHorizontalScrollIndicator = false
+    }
+    class func createTypeArr(data: DataModel)->[String] {
+        
+        let typeArr = data.homeData?.compactMap { $0.type}
+        return typeArr ?? []
     }
 }
